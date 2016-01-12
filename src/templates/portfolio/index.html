@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}Fractal Tree Generator{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="about" %}
+{% endblock %}
+
+{% block container %}
+<!-- Benefits of the Django application -->
+
+
+
+<div class="text-page">
+
+  <div class="page-header">
+    <h1>Portfolio <small>categories</small></h1>
+  </div>
+
+  <div class="container-fluid bg-3 text-center">
+   
+    <div class="row">
+      {% for cat in categories %}
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="/media/{{ cat.icon }}" class="img-thumbnail" />
+          <div class="caption">
+            <h3>{{ cat.name }}</h3>
+            <p>{{ cat.description }}</p>
+            <p><a href="{% url 'portfolio:list-category' cat.name %}" class="btn btn-primary" role="button">View &raquo;</a> </p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+
+
+</div>
+
+{% endblock container %}
