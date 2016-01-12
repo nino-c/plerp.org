@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}Fractal Tree Generator{% endblock %}
+
+{% block extrahead %}
+	
+	<script type="text/coffeescript">
+
+
+		window.FRACTAL_DIMENSION = {{ params.0 }}
+		window.TRAPEZOIDAL_SECTIONS = {{ params.1 }}
+		window.CHILDREN = {{ params.4 }}
+		window.DEGREE1_COEFF = {{ params.2 }}
+		window.DEGREE2_COEFF = {{ params.3 }}
+
+
+
+	</script>
+
+	<script type="text/coffeescript" src="{% static 'site/coffeescript/fractal-trees/class.FractalTree.coffee' %}"></script>
+{% endblock %}
+
+
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="about" %}
+{% endblock %}
+
+
+
+{% block container %}
+	
+	<div class="text-page">
+		<div class="container">
+
+			<div class="sidebar neenfloater">
+				<div class="panel panel-default">
+				    <div class="panel-heading">{{ params }}Enter Paramaters</div>
+				    <div class="panel-body">
+				    	<form class="form" method="post" action="#">
+						{% crispy form %}
+						</form>
+				    </div>
+				</div>
+			</div>
+
+			<div class="neen-artboard">
+
+				<canvas id="mzcan"></canvas>
+
+				
+
+			</div>
+			
+
+				
+		</div>
+	</div>
+	<br style="clear: both;" />
+
+{% endblock %}

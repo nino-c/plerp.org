@@ -9,6 +9,8 @@ html, body{
   text-align: center;
 }
 
+
+
 .footer {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -102,6 +104,7 @@ body>.navbar-transparent {
     position: absolute;
     bottom: 2em;
     left: 15px;
+    height: auto;
 }
 
 .contact-banner {
@@ -129,8 +132,18 @@ body>.navbar-transparent {
 }
 
 .text-page {
-    padding: 120px 0;
+    padding: 100px 0;
 }
+
+.neenfloater {
+  float: left;
+  position: absolute;
+  left: 80px;
+  top: 130px;
+  width: 200px;
+  opacity: 0.8;
+}
+
 
 #map-outer {
     height: 440px;

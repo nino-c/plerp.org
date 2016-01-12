@@ -21,6 +21,11 @@
     <link href="{% static 'site/css/main.css' %}" rel="stylesheet">
     {% endblock styles %}
 
+    <!-- Scripts that MUST be loaded on all pages -->
+    <script type="text/javascript" src="{% static 'site/js/coffee-script.js' %}"></script>
+    <script type="text/javascript" src="{% static 'site/js/jQuery2.1.1.js' %}"></script>
+
+
     <!-- Custom tags for the head tag -->
     {% block extrahead %}{% endblock extrahead %}
 
@@ -109,21 +114,23 @@
     <!-- Site footer -->
     {% block footer %}
       <!-- Some social button for contact will do -->
-      <a name="contact"></a>
-      <div class="container">
-            <div class="footer">
-        <div class="row">
-          <div class="col-lg-6">
-              <p>&copy; Company {% now 'Y' %}</p>
-          </div>
-          <div class="col-lg-6 text-right">
-            Connect with us on
-            <a href="#"><i class="fa fa-facebook"></i> Facebook</a> or
-            <a href="#"><i class="fa fa-twitter"></i> Twitter</a>
-          </div>
-        </div>
+      <footer>
+        <a name="contact"></a>
+        <div class="container">
+              <div class="footer">
+          <div class="row">
+            <div class="col-lg-6">
+                <p>&copy; Company {% now 'Y' %}</p>
             </div>
-      </div>
+            <div class="col-lg-6 text-right">
+              Connect with us on
+              <a href="#"><i class="fa fa-facebook"></i> Facebook</a> or
+              <a href="#"><i class="fa fa-twitter"></i> Twitter</a>
+            </div>
+          </div>
+              </div>
+        </div>
+      </footer>
     {% endblock %}
 
     <!-- Bootstrap core JavaScript
