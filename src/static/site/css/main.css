@@ -29,6 +29,9 @@ html, body{
     margin-bottom: 0;
 }
 
+
+
+
 /*body>.navbar-transparent {
     background-color: rgba(245,245,245,0.5)
     border-bottom: 2px solid rgba(80,80,80,0.5);
@@ -233,8 +236,8 @@ html, body{
  * --------------------------------------------------
  */
 body {
-  padding-top: 00px;
-  background-color: #f5f5f5;
+  padding-top: 0px;
+  background-color: #ffffff;
 }
 footer {
   padding-left: 15px;
@@ -288,6 +291,12 @@ footer {
   background-color: #428bca;
 }
 
+#sidebar {
+  background-color: #eeeeee;
+  box-shadow: 1px 0px 5px 2px rgba(0,0,0,0.37);
+  height: 100%;
+}
+
 /*
  * Main content
  */
@@ -295,6 +304,7 @@ footer {
 .main {
   padding: 20px;
   background-color: #fff;
+  background-color: transparent;
 }
 @media (min-width: 768px) {
   .main {
