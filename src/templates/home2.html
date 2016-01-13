@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Home{% endblock %}
+
+{% block extrahead %}
+
+<!-- <script type="text/javascript" src="{% static 'site/js/jQuery2.1.1.js' %}"></script> -->
+<!-- <script type="text/javascript" src="{% static 'site/js/prism/prism.js' %}"></script> -->
+<!-- <script type="text/javascript" src="{% static 'site/js/maze-bg/class.Maze.js' %}"></script> -->
+<!-- `<script type="text/javascript" src="{% static 'site/js/maze-bg/class.MazeSolver.js' %}"></script> -->
+<!-- `<script type="text/javascript" src="{% static 'site/js/MathJax2.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML' %}"> -->
+</script>
+
+<!--
+<script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+-->
+{% endblock %}
+
+
+
+
+
+{% block navbar-right %}
+  {% if not user.is_authenticated %}
+<a class="btn btn-default" href="{% url 'accounts:login' %}" role="button">Log in</a>
+<a class="btn btn-primary" href="{% url 'accounts:signup' %}" role="button">Sign up</a>
+  {% else %}
+    {{ block.super }}
+  {% endif %}
+{% endblock %}
+
+
+
+
+{% block container %}
+
+<div class="raw-container">
+
+  
+    <div class="row">
+      <div id="feature_col" class="col-sm-5">
+          <div id="home_feature">
+            <canvas id="headermaze"></canvas>
+          </div>
+      </div>
+      <div class="col-sm-7">
+
+        <div class="page-header">
+          <h1>Portfolio <small>categories</small></h1>
+        </div>
+
+         <div class="well"><em>
+         The following is an interactive portfolio sampling work of computer <br />
+         programmer and mathematician, Nino P. Cocchiarella.  </em></div>
+   
+     <!--  <div class="container-fluid bg-3 text-left">
+      {% for cat in categories %}
+      <div class="col-sm-6">
+        <div class="thumbnail">
+          <a href="{% url 'portfolio:list-category' cat.name %}">
+            <img src="{{ cat.image.url_200x200 }}" class="img-thumbnail" />
+          </a>
+          <div class="caption text-left">
+            <h3>{{ cat.name }}</h3>
+            <p>{{ cat.description }}</p>
+            <a href="{% url 'portfolio:list-category' cat.name %}" class="btn btn-primary" role="button">View &raquo;</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      </div> -->
+
+    {% for cat in categories %}
+    <div class="media">
+      <div class="media-left media-top">
+        <a href="{% url 'portfolio:list-category' cat.name %}">
+          <img class="media-object thumbnail" src="{{ cat.image.url_200x200 }}" />
+        </a>
+      </div>
+      <div class="media-body">
+        <div class="media-heading">
+          <h4>{{ cat.name }}</h4>
+        </div>
+
+        <div class="caption">
+          <p>{{ cat.description }}</p>
+          <a href="{% url 'portfolio:list-category' cat.name %}" class="btn btn-primary" role="button">View &raquo;</a>
+        </div>
+
+      </div>
+    </div>
+    {% endfor %}
+  
+      </div>
+      <!-- <div class="col-sm-3">
+        <aside>
+        sdfgslkdjfgsdlkfj
+        </aside>
+      </div> -->
+    </div>
+
+  
+  
+  
+</div>
+
+{% endblock container %}
+
+{% block scripts %}
+
+{% endblock scripts %}
+
+
+{% block footer %}
+
+{% endblock %}
