@@ -33,6 +33,7 @@ class PortfolioItem(models.Model):
     category = models.ForeignKey(PortfolioCategory)
     description = models.TextField()
     sourcecode = models.URLField()
+    image = ImageWithThumbsField(null=True, sizes=((125,125),(200,200)))
     year = models.IntegerField()
     month = models.IntegerField()
 
@@ -48,10 +49,6 @@ class ImageModel(models.Model):
     image = ImageWithThumbsField(sizes=((125,125),(200,200)))
     timestamp = models.DateTimeField(default=now, editable=False)
     gallery = models.ForeignKey(ImageGallery, null=True, related_name='images')
-
-
-
-
 
 
 

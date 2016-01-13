@@ -24,16 +24,22 @@
         
     var Maze;
     var Canvas;
+    var CanvasBox;
     var ctx;
     var solver;
 
     function startMaze() {
 
+        //CanvasBox = $('#home_feature');
+
         var cellSize = 15;
+        var screenwidth = $('#feature_col').width();
+        var screenheight = $(window).height() - 50;
 
         Canvas = document.getElementById('headermaze');
-        Canvas.width = $(window).width();
-        //Canvas.height = $(window).height();
+        
+        Canvas.width = screenwidth;
+        Canvas.height = screenheight;
 
         var mx = Math.floor((Canvas.width) / cellSize);
         var my = Math.floor((Canvas.height) / cellSize);
@@ -43,62 +49,34 @@
         //ctx = document.getCSSCanvasContext("2d", "mazecanvas", 
 
         Maze = new Maze(2, mx, my, cellSize);
-        Maze.frameInterval = setInterval(Maze.renderStep, 30);
-
-        $("#neen-search").click(function() {
-            neenSearch();
-        });
+        Maze.frameInterval = setInterval(Maze.renderStep, 30)
 
     }
 
-    $(function() {
-        $('pre').each(function() {
-            var text = $(this).html();
-            var m = text.match(/\%\%[^\%]+\%\%/);
-            if (m) {
-                var lang = m[0].split('%').join('');
-                var code = document.createElement('code');
-                $(code).addClass('language-'+lang);
-                $(code).css('white-space', 'pre');
-                $(this).text('');
-                $(code).text(
-                    text.split(m[0]).join('')
-                    .split('<br>').join("\n")
-                    .split('&nbsp;').join(' ')
-                    .split('&amp;').join('&')
-                    .split('&lt;').join('<')
-                    .split('&gt;').join('>')
-                    );
-                $(this).replaceWith($(code));
-            }
-        });
-    });
+    // $(function() {
+    //     $('pre').each(function() {
+    //         var text = $(this).html();
+    //         var m = text.match(/\%\%[^\%]+\%\%/);
+    //         if (m) {
+    //             var lang = m[0].split('%').join('');
+    //             var code = document.createElement('code');
+    //             $(code).addClass('language-'+lang);
+    //             $(code).css('white-space', 'pre');
+    //             $(this).text('');
+    //             $(code).text(
+    //                 text.split(m[0]).join('')
+    //                 .split('<br>').join("\n")
+    //                 .split('&nbsp;').join(' ')
+    //                 .split('&amp;').join('&')
+    //                 .split('&lt;').join('<')
+    //                 .split('&gt;').join('>')
+    //                 );
+    //             $(this).replaceWith($(code));
+    //         }
+    //     });
+    // });
    
-    // var greyout = function() {
-        
-    //     $('#greyout').css({
-    //         'height': $(document).height(),
-    //         'display': 'block'
-    //     });
-    //     $('body').css({'overflow':'hidden'});
-    // };
-    // var removeGreyout = function() {
-    //     $('#greyout').css({
-    //         'height': '0px',
-    //         'display': 'none'
-    //     });
-    //     $('body').css({'overflow':'visible'}); 
-    // };
-
-    // function neenSearch() {
-    //     greyout();
-    //     $("#big-search").css({
-    //         'display': 'block',
-    //         'top': (($(window).height() / 2)-100).toString() + 'px',
-    //         'left': (($(window).width() / 2)-300).toString() + 'px',
-    //     });
-    //     $("#big-search").find("input")[0].focus();
-    // }
+   
 
     
 
@@ -133,29 +111,88 @@
   {% endif %}
 {% endblock %}
 
-{% block splash %}
-  <div class="jumbotron jumbotron-carousel corporate-jumbo">
-    <canvas id="headermaze" width="100%" height="400"></canvas>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-sm-8">
-          <h1>{% include "_brandname.html" %}</h1>
-          <p>An interactive portfolio of the work of Nino P. Cocchiarella</p>
-          <a class="btn btn-primary" href="{% url 'accounts:signup' %}" role="button">Sign up</a>
-        </div>
 
-    </div>
-  </div>
-  </div>
-{% endblock splash %}
+
 
 {% block container %}
 
+<div class="raw-container">
 
   
+    <div class="row">
+      <div id="feature_col" class="col-sm-5">
+          <div id="home_feature">
+            <canvas id="headermaze"></canvas>
+          </div>
+      </div>
+      <div class="col-sm-7">
+
+        <div class="page-header">
+          <h1>Portfolio <small>categories</small></h1>
+        </div>
+
+         <div class="well"><em>
+         The following is an interactive portfolio sampling work of computer <br />
+         programmer and mathematician, Nino P. Cocchiarella.  </em></div>
+   
+     <!--  <div class="container-fluid bg-3 text-left">
+      {% for cat in categories %}
+      <div class="col-sm-6">
+        <div class="thumbnail">
+          <a href="{% url 'portfolio:list-category' cat.name %}">
+            <img src="{{ cat.image.url_200x200 }}" class="img-thumbnail" />
+          </a>
+          <div class="caption text-left">
+            <h3>{{ cat.name }}</h3>
+            <p>{{ cat.description }}</p>
+            <a href="{% url 'portfolio:list-category' cat.name %}" class="btn btn-primary" role="button">View &raquo;</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      </div> -->
+
+    {% for cat in categories %}
+    <div class="media">
+      <div class="media-left media-top">
+        <a href="{% url 'portfolio:list-category' cat.name %}">
+          <img class="media-object thumbnail" src="{{ cat.image.url_200x200 }}" />
+        </a>
+      </div>
+      <div class="media-body">
+        <div class="media-heading">
+          <h4>{{ cat.name }}</h4>
+        </div>
+
+        <div class="caption">
+          <p>{{ cat.description }}</p>
+          <a href="{% url 'portfolio:list-category' cat.name %}" class="btn btn-primary" role="button">View &raquo;</a>
+        </div>
+
+      </div>
+    </div>
+    {% endfor %}
+  
+      </div>
+      <!-- <div class="col-sm-3">
+        <aside>
+        sdfgslkdjfgsdlkfj
+        </aside>
+      </div> -->
+    </div>
+
+  
+  
+  
+</div>
+
 {% endblock container %}
 
 {% block scripts %}
-<script src="{% static 'site/js/site.js' %}"></script>
+<!-- <script src="{% static 'site/js/site.js' %}"></script> -->
 {% endblock scripts %}
 
+
+{% block footer %}
+
+{% endblock %}

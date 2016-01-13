@@ -13,7 +13,7 @@ import portfolio.urls
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.HomePage.as_view(), name='home'),
+    url(r'^$', portfolio.views.mainindex, name='home'),
     url(r'^about/$', views.AboutPage.as_view(), name='about'),
     url(r'^portfolio/', include(portfolio.urls, namespace='portfolio')),
     url(r'^fractal_tree/', include(fractal_tree.urls, namespace='fractal_tree')),
