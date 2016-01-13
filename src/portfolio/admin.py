@@ -4,9 +4,14 @@ from portfolio.models import *
 admin.site.site_title = "plerp.org"
 admin.site.site_header = "plerp.org"
 
-admin.site.register(PortfolioCategory)
-admin.site.register(PortfolioItem)
 
-# @admin.register(Event)
-# class EventAdmin(admin.ModelAdmin):
-# 	date_heirarchy = 'gamedate'
+map(admin.site.register, [PortfolioCategory, PortfolioItem, ProprietaryPortfolioItem])
+
+class ImagesInline(admin.StackedInline):
+    model = ImageModel
+
+@admin.register(ImageGallery)
+class ImageGallery(admin.ModelAdmin):
+    inlines = [
+        ImagesInline,
+    ]
