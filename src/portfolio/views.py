@@ -6,7 +6,7 @@ from . import models
 
 def mainindex(request):
 	categories = models.PortfolioCategory.objects.all()
-	return render(request, "home.html", {'categories': categories})
+	return render(request, "home2.html", {'categories': categories})
 
 def index(request):
 	categories = models.PortfolioCategory.objects.all()

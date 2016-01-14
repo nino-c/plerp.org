@@ -65,18 +65,16 @@
       {% endif %}
     {% endblock %}
 
-    {% block splash %}
-    {% endblock splash %}
-    
-    {% block container %}
-    
-    {% endblock container %}
+    {% block splash %}{% endblock splash %}
+
+    {% block container %}{% endblock container %}
 
     <!-- Site footer -->
-    {% block footer %}
-      <!-- Some social button for contact will do -->
-      
-    {% endblock %}
+    {% block footer %}{% endblock %}
+
+    <div id="canvas_container">
+      {% block bigcanvas %}{% endblock bigcanvas %}
+    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

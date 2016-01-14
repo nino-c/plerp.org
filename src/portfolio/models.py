@@ -14,7 +14,7 @@ class PortfolioCategory(models.Model):
 
     name = models.CharField(max_length=100)
     description = models.TextField()
-    icon = models.ImageField()
+    short_description = models.TextField(null=True)
     image = ImageWithThumbsField(null=True, sizes=((125,125),(200,200)))
     deployment_type = models.CharField(max_length=50, 
         choices=(

@@ -37,78 +37,68 @@
 
 
 
+
+
 {% block container %}
 
-  <div class="container-fluid">
+<div class="container-fluid">
+    
+    <div class="row row-offcanvas row-offcanvas-left active">
       
-      <div class="row row-offcanvas row-offcanvas-left active">
+       <div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation">
+         
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Export</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item</a></li>
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+            <li><a href="">More navigation</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+          </ul>
         
-         <div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation">
-           
-            <ul class="nav nav-sidebar">
-              <li class="active"><a href="#">Overview</a></li>
-              <li><a href="#">Reports</a></li>
-              <li><a href="#">Analytics</a></li>
-              <li><a href="#">Export</a></li>
-            </ul>
-            <ul class="nav nav-sidebar">
-              <li><a href="">Nav item</a></li>
-              <li><a href="">Nav item again</a></li>
-              <li><a href="">One more nav</a></li>
-              <li><a href="">Another nav item</a></li>
-              <li><a href="">More navigation</a></li>
-            </ul>
-            <ul class="nav nav-sidebar">
-              <li><a href="">Nav item again</a></li>
-              <li><a href="">One more nav</a></li>
-              <li><a href="">Another nav item</a></li>
-            </ul>
+      </div><!--/span-->
+      
+
+
+
+
+<div class="col-sm-9 col-md-10 main">
+  
+  <!--toggle sidebar button-->
+  <p class="visible-xs">
+    <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">
+      <i class="glyphicon glyphicon-chevron-left"></i></button>
+  </p>
+  
+
+
+
+
+  <div class="row placeholders">
+    {% for cat in categories %}
+      <div class="col-xs-6 col-sm-4 placeholder text-center">
+        <div class="displaybox">
+          <a href="{% url 'portfolio:list-category' cat.name %}">
+            <img class="center-block img-responsive thumbnail" src="{{ cat.image.url_200x200 }}" />
+          </a>
           
-        </div><!--/span-->
-        
-        <div class="col-sm-9 col-md-10 main">
-          
-          <!--toggle sidebar button-->
-          <p class="visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"><i class="glyphicon glyphicon-chevron-left"></i></button>
-          </p>
-          
-
-
-          <div class="page-header">
-            <h1>Portfolio <small>categories</small></h1>
-          </div>
-
-         <div class="well"><em>
-         The following is an interactive portfolio sampling work of computer <br />
-         programmer and mathematician, Nino P. Cocchiarella.  </em></div>
-
-          <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder text-center">
-              <img src="//placehold.it/200/6666ff/fff" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder text-center">
-              <img src="//placehold.it/200/66ff66/fff" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder text-center">
-              <img src="//placehold.it/200/6666ff/fff" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder text-center">
-              <img src="//placehold.it/200/66ff66/fff" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-          </div>
-          
-          <hr>
-
-          <h2 class="sub-header">Section title</h2>
+          <h4>{{ cat.name }}</h4>
+          <span class="text-muted">{{ cat.short_description }}</span>
+        </div>
+      </div>
+    {% endfor %}  
+  </div>
+ 
          
           
       </div><!--/row-->
@@ -118,34 +108,7 @@
 
 
 
-        <!-- <div class="page-header">
-          <h1>Portfolio <small>categories</small></h1>
-        </div>
-
-         <div class="well"><em>
-         The following is an interactive portfolio sampling work of computer <br />
-         programmer and mathematician, Nino P. Cocchiarella.  </em></div>
-   
-        {% for cat in categories %}
-        <div class="media">
-          <div class="media-left media-top">
-            <a href="{% url 'portfolio:list-category' cat.name %}">
-              <img class="media-object thumbnail" src="{{ cat.image.url_200x200 }}" />
-            </a>
-          </div>
-          <div class="media-body">
-            <div class="media-heading">
-              <h4>{{ cat.name }}</h4>
-            </div>
-
-            <div class="caption">
-              <p>{{ cat.description }}</p>
-              <a href="{% url 'portfolio:list-category' cat.name %}" class="btn btn-primary" role="button">View &raquo;</a>
-            </div>
-
-          </div>
-        </div>
-        {% endfor %} -->
+        
 
 {% endblock container %}
 
@@ -157,3 +120,7 @@
 {% block footer %}
 
 {% endblock %}
+
+{% block bigcanvas %}
+    <canvas id="big-canvas"></canvas>
+{% endblock bigcanvas %}
