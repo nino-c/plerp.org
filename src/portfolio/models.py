@@ -13,13 +13,13 @@ class PortfolioCategory(models.Model):
         return self.name
 
     name = models.CharField(max_length=100)
-    description = models.TextField()
+    description = models.TextField(null=True)
     short_description = models.TextField(null=True)
     image = ImageWithThumbsField(null=True, sizes=((125,125),(200,200)))
     deployment_type = models.CharField(max_length=50, 
         choices=(
             ('canvasapp', 'HTML5 Canvas'), 
-            ('paper', 'Academic Paper'), 
+            ('paper', 'Academic Papers'), 
             ('sourcecode', 'Raw Source Code'),
             ('description', 'Description and gallery of images')),
         default='canvasapp')

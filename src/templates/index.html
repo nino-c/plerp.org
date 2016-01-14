@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Home{% endblock %}
+
+{% block extrahead %}
+
+<!-- <script type="text/javascript" src="{% static 'site/js/jQuery2.1.1.js' %}"></script> -->
+<!-- <script type="text/javascript" src="{% static 'site/js/prism/prism.js' %}"></script> -->
+<!-- <script type="text/javascript" src="{% static 'site/js/maze-bg/class.Maze.js' %}"></script> -->
+<!-- `<script type="text/javascript" src="{% static 'site/js/maze-bg/class.MazeSolver.js' %}"></script> -->
+<!-- `<script type="text/javascript" src="{% static 'site/js/MathJax2.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML' %}"> -->
+<!-- </script> -->
+
+<!--
+<script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+-->
+{% endblock %}
+
+
+
+
+
+{% block navbar-right %}
+  {% if not user.is_authenticated %}
+  <a class="btn btn-default" href="{% url 'accounts:login' %}" role="button">Log in</a>
+  <a class="btn btn-primary" href="{% url 'accounts:signup' %}" role="button">Sign up</a>
+  {% else %}
+    {{ block.super }}
+  {% endif %}
+{% endblock %}
+
+
+
+
+
+
+{% block container %}
+
+<div class="container-fluid">
+    <div class="row row-offcanvas row-offcanvas-left active">
+
+
+      <div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation">
+         
+        <h3 class="mute">Portfolio</h3>
+        <div class="list-group">
+          {% for cat in categories %}
+            <a href="#" class="list-group-item">{{ cat.name }}<span class="badge">{{ cat.id }}</span></a>
+          {% endfor %}
+        </div>
+      </div>
+
+
+
+      
+      <div class="col-sm-9 col-md-10 main">
+  
+        <!--toggle sidebar button-->
+        <p class="visible-xs">
+          <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">
+            <i class="glyphicon glyphicon-chevron-left"></i></button>
+        </p>
+
+        {% block pagecontent %}
+        <div class="row placeholders">
+          {% for cat in categories %}
+            <div class="col-xs-6 col-sm-3 placeholder text-center">
+              
+                <a href="{% url 'portfolio:list-category' cat.id %}">
+                  <img class="center-block img-responsive img-circle" src="{{ cat.image.url_200x200 }}" />
+                </a>
+                
+                <h4>{{ cat.name }}</h4>
+                <!-- <span class="text-muted">{{ cat.short_description }}</span> -->
+              </div>
+            
+          {% endfor %}  
+        </div>
+        {% endblock pagecontent %}
+         
+          
+      </div><!--/row-->
+
+
+  </div>
+</div>
+
+
+
+
+        
+
+{% endblock container %}
+
+{% block scripts %}
+
+{% endblock scripts %}
+
+
+{% block footer %}
+
+{% endblock %}
+
+{% block bigcanvas %}
+    <canvas id="big-canvas"></canvas>
+{% endblock bigcanvas %}

@@ -1,14 +1,12 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 {% load staticfiles %}
 {% load crispy_forms_tags %}
 
 {% block title %}Portfolio{% endblock %}
 
-{% block navbar-left %}
-  {% include "_navbar.html" with active_link="about" %}
-{% endblock %}
 
-{% block container %}
+
+{% block pagecontent %}
 <!-- Benefits of the Django application -->
 
 
@@ -25,11 +23,11 @@
       {% for cat in categories %}
       <div class="col-sm-3">
         <div class="thumbnail">
-          <a href="{% url 'portfolio:list-category' cat.name %}">
+          <a href="{% url 'portfolio:list-category' cat.id %}">
             <img src="{{ cat.image.url_200x200 }}" class="img-thumbnail" />
           </a>
           <div class="caption">
-            <h3>{{ cat.name }} <div style="float:right;"><a href="{% url 'portfolio:list-category' cat.name %}" class="btn btn-primary" role="button">View &raquo;</a></div></h3>
+            <h3>{{ cat.name }} <div style="float:right;"><a href="{% url 'portfolio:list-category' cat.id %}" class="btn btn-primary" role="button">View &raquo;</a></div></h3>
             <p>{{ cat.description }}</p>
           </div>
         </div>
@@ -37,9 +35,6 @@
       {% endfor %}
     <!-- </div> -->
   </div>
-
-
-
 </div>
 
-{% endblock container %}
+{% endblock pagecontent %}

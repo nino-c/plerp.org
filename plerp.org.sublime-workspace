@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"background",
+				"background-color"
+			],
+			[
 				"Canvas",
 				"CanvasBox"
 			],
@@ -75,25 +79,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "src/mainsite/urls.py",
-			"settings":
-			{
-				"buffer_size": 1184,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "from django.views import generic\nfrom django.shortcuts import render\nfrom django\n\ndef index(request):\n	return render(request, \"home2.html\")\n\nclass AboutPage(generic.TemplateView):\n	template_name = \"about.html\"\n",
-			"file": "src/mainsite/views.py",
-			"file_size": 198,
-			"file_write_time": 130972272921075631,
-			"settings":
-			{
-				"buffer_size": 210,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "Packages/Python/Python.sublime-build",
 	"build_system_choices":
@@ -118,10 +103,46 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 96.0,
-		"last_filter": "remov",
+		"height": 392.0,
+		"last_filter": "run",
 		"selected_items":
 		[
+			[
+				"run",
+				"Django: Run Server"
+			],
+			[
+				"shell",
+				"Django: Shell"
+			],
+			[
+				"dj",
+				"Django: Terminal Here"
+			],
+			[
+				"make",
+				"Django: Make Migration"
+			],
+			[
+				"migra",
+				"Django: Migrate Database"
+			],
+			[
+				"django",
+				"Django: Make Migration"
+			],
+			[
+				"runs",
+				"Django: Run Server"
+			],
+			[
+				"migr",
+				"Django: Migrate Database"
+			],
+			[
+				"djan run",
+				"Django: Run Server"
+			],
 			[
 				"remov",
 				"Package Control: Remove Package"
@@ -155,10 +176,6 @@
 				"Django: Shell"
 			],
 			[
-				"run",
-				"Django: Run Server"
-			],
-			[
 				"django ",
 				"Django: Terminal Here"
 			],
@@ -173,10 +190,6 @@
 			[
 				"spaces",
 				"Indentation: Convert to Spaces"
-			],
-			[
-				"django",
-				"Django: Boilerplate"
 			],
 			[
 				"repl ip",
@@ -303,7 +316,7 @@
 	},
 	"console":
 	{
-		"height": 168.0,
+		"height": 140.0,
 		"history":
 		[
 			"os.curdir",
@@ -336,10 +349,30 @@
 	[
 		"/home/ninopq/Projects/plerp.org",
 		"/home/ninopq/Projects/plerp.org/src",
-		"/home/ninopq/Projects/plerp.org/src/mainsite"
+		"/home/ninopq/Projects/plerp.org/src/fractal_tree",
+		"/home/ninopq/Projects/plerp.org/src/mainsite",
+		"/home/ninopq/Projects/plerp.org/src/portfolio",
+		"/home/ninopq/Projects/plerp.org/src/templates",
+		"/home/ninopq/Projects/plerp.org/src/templates/portfolio"
 	],
 	"file_history":
 	[
+		"/home/ninopq/Projects/plerp.org/src/templates/index.html",
+		"/home/ninopq/Projects/plerp.org/src/templates/portfolio/list_category.html",
+		"/home/ninopq/Projects/plerp.org/src/portfolio/models.py",
+		"/home/ninopq/Projects/plerp.org/src/portfolio/urls.py",
+		"/home/ninopq/Projects/plerp.org/src/mainsite/urls.py",
+		"/home/ninopq/Projects/plerp.org/src/portfolio/views.py",
+		"/home/ninopq/Projects/plerp.org/src/templates/portfolio/index.html",
+		"/home/ninopq/Projects/plerp.org/src/fractal_tree/views.py",
+		"/home/ninopq/Projects/plerp.org/src/mainsite/views.py",
+		"/home/ninopq/Projects/plerp.org/src/fractal_tree/urls.py",
+		"/home/ninopq/Projects/plerp.org/src/static/site/js/main.js",
+		"/home/ninopq/Projects/plerp.org/src/templates/dashboard.html",
+		"/home/ninopq/Projects/plerp.org/src/templates/base.html",
+		"/home/ninopq/Projects/plerp.org/src/static/site/css/main.css",
+		"/home/ninopq/Projects/plerp.org/src/static/site/js/maze-bg/class.Maze.js",
+		"/home/ninopq/Projects/plerp.org/src/templates/home.html",
 		"/home/ninopq/.config/sublime-text-3/Packages/anaconda/README.md",
 		"/home/ninopq/.config/sublime-text-3/Packages/anaconda/Anaconda.sublime-settings",
 		"/home/ninopq/.config/sublime-text-3/Packages/User/DjangoDocsSearch.sublime-settings",
@@ -352,40 +385,26 @@
 		"/home/ninopq/.config/sublime-text-3/Packages/Django Manage Commands/DjangoCommands.sublime-settings",
 		"/home/ninopq/.config/sublime-text-3/Packages/SublimeREPL/SublimeREPL.sublime-settings",
 		"/home/ninopq/.config/sublime-text-3/Packages/DjangoCommands/Default.sublime-keymap",
-		"/home/ninopq/Projects/plerp.org/src/static/site/js/main.js",
-		"/home/ninopq/Projects/plerp.org/src/templates/base.html",
-		"/home/ninopq/Projects/plerp.org/src/templates/home.html",
-		"/home/ninopq/Projects/plerp.org/src/static/site/css/main.css",
 		"/home/ninopq/Projects/plerp.org/src/templates/home2.html",
-		"/home/ninopq/Projects/plerp.org/src/mainsite/views.py",
-		"/home/ninopq/Projects/plerp.org/src/mainsite/urls.py",
 		"/home/ninopq/Projects/projects.sublime-project",
-		"/home/ninopq/Projects/plerp.org/src/portfolio/views.py",
-		"/home/ninopq/Projects/plerp.org/src/templates/dashboard.html",
 		"/home/ninopq/Projects/plerp.org/src/templates/dashboard_(original with tables etc).html",
 		"/home/ninopq/Projects/plerp.org/src/static/bootstrap/themes/bootply/js/scripts.js",
 		"/home/ninopq/Projects/plerp.org/src/static/bootstrap/js/bootstrap.js",
 		"/home/ninopq/Projects/plerp.org/src/static/bootstrap/js/bootstrap.min.js",
 		"/home/ninopq/Projects/plerp.org/src/templates/about.html",
-		"/home/ninopq/Projects/plerp.org/src/templates/portfolio/list_category.html",
-		"/home/ninopq/Projects/plerp.org/src/templates/portfolio/index.html",
 		"/home/ninopq/Projects/plerp.org/src/templates/dashboard",
 		"/home/ninopq/Projects/plerp.org/src/static/site/js/riemann_zeta.js",
 		"/home/ninopq/Projects/plerp.org/src/mainsite/settings/base.py",
-		"/home/ninopq/Projects/plerp.org/src/portfolio/urls.py",
 		"/home/ninopq/Projects/plerp.org/src/templates/_navbar.html",
-		"/home/ninopq/Projects/plerp.org/src/fractal_tree/views.py",
 		"/home/ninopq/Projects/plerp.org/src/static/site/coffeescript/fractal-trees/class.FractalTree.coffee",
 		"/home/ninopq/Projects/plerp.org/src/static/site/js/site.js",
 		"/home/ninopq/Projects/nino.cc/static/coffeescript/fractal-trees/class.FractalTree.coffee",
-		"/home/ninopq/Projects/plerp.org/src/portfolio/models.py",
 		"/home/ninopq/Projects/plerp.org/src/deployments/views.py",
 		"/home/ninopq/Projects/plerp.org/src/canvasapp/views.py",
 		"/home/ninopq/Projects/plerp.org/src/portfolio/admin.py",
 		"/home/ninopq/Projects/plerp.org/src/templates/fractal_tree/fractal-space.html",
 		"/home/ninopq/Work/eb_django_app/sportspocket/sports/models.py",
 		"/home/ninopq/Work/eb_django_app/sportspocket/sports/admin.py",
-		"/home/ninopq/Projects/plerp.org/src/fractal_tree/urls.py",
 		"/home/ninopq/Projects/plerp.org/src/canvasapps/urls.py",
 		"/home/ninopq/Work/eb_django_app/sportspocket/sports/urls.py",
 		"/home/ninopq/Projects/plerp.org/src/canvasapps/models.py",
@@ -465,9 +484,7 @@
 		"/home/ninopq/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
 		"/home/ninopq/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
 		"/home/ninopq/.config/sublime-text-3/Installed Packages/SublimeIPython/README.md",
-		"/home/ninopq/sage/src/sage/rings/commutative_ring.py",
-		"/home/ninopq/sage/src/sage/matrix/matrix_space.py",
-		"/home/ninopq/sage/src/sage/matrix/matrix.pxd"
+		"/home/ninopq/sage/src/sage/rings/commutative_ring.py"
 	],
 	"find":
 	{
@@ -488,6 +505,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"redirect",
+			"cat.name",
+			"cat.id",
+			"button",
+			"canvas_container",
+			"main",
+			"fluid",
+			".thumb",
 			"sidebar",
 			"new numeric.T",
 			"125",
@@ -583,73 +608,14 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "src/mainsite/urls.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1184,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								878,
-								878
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/mainsite/views.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 210,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								80,
-								80
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 25.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -694,7 +660,7 @@
 	"project": "plerp.org.sublime-project",
 	"replace":
 	{
-		"height": 46.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -704,8 +670,52 @@
 		"selected_items":
 		[
 			[
+				"index",
+				"src/templates/index.html"
+			],
+			[
+				"url",
+				"src/mainsite/urls.py"
+			],
+			[
+				"urls",
+				"src/portfolio/urls.py"
+			],
+			[
+				"models",
+				"src/portfolio/models.py"
+			],
+			[
+				"home2",
+				"src/templates/home2.html"
+			],
+			[
+				"base",
+				"src/templates/base.html"
+			],
+			[
 				"main",
-				"Projects/plerp.org/src/static/site/css/main.css"
+				"src/static/site/css/main.css"
+			],
+			[
+				"home",
+				"src/templates/home.html"
+			],
+			[
+				"main.j",
+				"src/static/site/js/main.js"
+			],
+			[
+				"model",
+				"src/portfolio/models.py"
+			],
+			[
+				"main.css",
+				"src/static/site/css/main.css"
+			],
+			[
+				"portfolio/vie",
+				"src/portfolio/views.py"
 			],
 			[
 				"main.",
@@ -744,28 +754,12 @@
 				"Projects/plerp.org/src/portfolio/admin.py"
 			],
 			[
-				"main.css",
-				"Projects/plerp.org/src/static/site/css/main.css"
-			],
-			[
-				"url",
-				"Projects/plerp.org/src/mainsite/urls.py"
-			],
-			[
 				"base.py",
 				"Projects/plerp.org/src/mainsite/settings/base.py"
 			],
 			[
 				"devel",
 				"Projects/plerp.org/src/mainsite/settings/development.py"
-			],
-			[
-				"base",
-				"Projects/plerp.org/src/templates/base.html"
-			],
-			[
-				"home",
-				"Projects/plerp.org/src/templates/home.html"
 			],
 			[
 				"base.ht",
@@ -794,10 +788,6 @@
 			[
 				"mod",
 				"sports/models.py"
-			],
-			[
-				"urls",
-				"sports/urls.py"
 			],
 			[
 				"view",
@@ -832,7 +822,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 335.0,
+	"side_bar_width": 261.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
