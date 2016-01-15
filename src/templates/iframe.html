@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load staticfiles %}
+    {% load thumbnail %}
+    
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="description" content="{% block description %}{% endblock description %}">
+	    <meta name="author" content="Arun Ravindran">
+	    <link rel="shortcut icon" href="{% static 'site/ico/favicon.ico' %}">
+
+	    {% block extrahead %}
+	        
+
+
+	    {% endblock extrahead %}
+
+	    <script type="text/javascript" src="{% static 'site/js/coffee-script.js' %}"></script>
+    	<script type="text/javascript" src="{% static 'site/js/jQuery2.1.1.js' %}"></script>
+    	<script type="text/javascript" src="{% static 'site/js/numeric-1.2.6.js' %}"></script>
+    	<script type="text/javascript" src="{% static 'site/js/underscore.js' %}"></script>
+    	<!--<script type="text/javascript" src="{% static 'site/js/iframe.js' %}"></script>-->
+    	<script type="text/coffeescript" src="{% static 'site/coffeescript/iframe.coffee' %}"></script>
+
+    	<!-- Bootstrap core CSS -->
+	    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+	    <!-- Custom styles for this site -->
+	    {% block styles %}
+	    <link href="{% static 'site/css/iframe.css' %}" rel="stylesheet">
+	    {% endblock styles %}
+
+	    
+
+
+	</head>
+
+	<body>
+	
+	</body>
+</html>

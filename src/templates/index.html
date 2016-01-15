@@ -107,5 +107,7 @@
 {% endblock %}
 
 {% block bigcanvas %}
-    <canvas id="big-canvas"></canvas>
+  {% if iframe_app %}
+    <iframe id="big-canvas" scrolling="no" src="/{{ iframe_app }}/index"></iframe>
+  {% endif %}
 {% endblock bigcanvas %}

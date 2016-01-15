@@ -1,33 +1,40 @@
+/*
 
-var Canvas = undefined;
-var ctx = undefined;
+@author: Nino P. Cocchiarella
+(c) 2016
 
+General site-wide plerping-system
+-startup routines
+
+*/
+
+
+
+function adjust_sidebar() {
+
+	console.log('adjust sidebar height');
+	var sidebar = $("#sidebar");
+	sidebar.height( $(window).height() );
+	
+
+	var canvas_iframe = $("#big-canvas");
+	canvas_iframe.width( $(window).width() - sidebar.width() );
+	canvas_iframe.height( $(window).height() );
+
+}
+
+
+
+// site-wide startup routine
 $(document).ready(function() {
+
+	console.log("start main js app");
+	adjust_sidebar();
+
+	// for the sidebar, from "Edge"
 	$('[data-toggle=offcanvas]').click(function() {
 		$('.row-offcanvas').toggleClass('active');
 	});
 
-	$('#sidebar').height($(window).height());
-
-	Canvas = document.getElementById('big-canvas');
-
-	if (Canvas != undefined) {
-			
-		Canvas.width = $(window).width() - 230;
-		Canvas.height = $(window).height();
-		console.log(Canvas);
-		ctx = Canvas.getContext("2d");
-		ctx.strokeStyle = "#333333";
-		ctx.lineWidth = 1;
-
-		// was to test that canvas works
-		// for (var i=0; i<50; i++) {
-		//    ctx.beginPath();
-		//    ctx.moveTo(100,100);
-		//    ctx.lineTo(300,300);
-		//    ctx.lineTo(200,100);
-		//    ctx.stroke();
-		//}
-	}
 
 });

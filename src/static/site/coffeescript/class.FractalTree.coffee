@@ -15,7 +15,8 @@ arccos = Math.acos
 arctan = Math.atan
 root = Math.sqrt
 
-canvas = null
+
+canvas = null 
 gl = null
 
 moveTo = ([x,y]) -> gl.moveTo(x, y)
@@ -232,37 +233,34 @@ class TreeStick
 
 
 
-if document?
-   $(document).ready ->
+window.start = () ->
 
-       console.log 'tree!'
-       canvas = document.getElementById('mzcan')
-       if canvas and canvas != undefined
+    console.log 'startapp tree!'
 
-           canvas.width = $(window).width()
-           canvas.height = $(window).height() - 120
+    canvas = window.artboard.canvas
+    gl = window.ctx
 
+    if canvas and canvas != undefined
 
-           gl = canvas.getContext("2d")
-           gl.scale(1, -1)
-           gl.translate(0, -canvas.height)
-           U_width = canvas.width
-           U_height = canvas.height
+       gl.scale(1, -1)
+       gl.translate(0, -canvas.height)
+       U_width = canvas.width
+       U_height = canvas.height
 
-           gl.strokeStyle = 'rgb(100, 25, 100)'
+       gl.strokeStyle = 'rgb(100, 25, 100)'
 
-           originalTreeStick =
-               start: [U_width/2, 0]
-               direction: pi/2
-               length: U_height
-               start_alpha: 1
-               begin_thickness: 130
-               end_thickness: 20
-               generation: 0
-               children: CHILDREN
+       originalTreeStick =
+           start: [U_width/2, 0]
+           direction: pi/2
+           length: U_height
+           start_alpha: 1
+           begin_thickness: 130
+           end_thickness: 20
+           generation: 0
+           children: CHILDREN
 
-           @hank = new TreeStick originalTreeStick
-           #@frameInterval = setInterval (=> @hank.grow()), 1000
+       @hank = new TreeStick originalTreeStick
+       #@frameInterval = setInterval (=> @hank.grow()), 1000
 
 
 

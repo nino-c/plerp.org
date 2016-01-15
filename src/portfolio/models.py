@@ -63,7 +63,7 @@ class ProprietaryPortfolioItem(PortfolioItem):
 class CanvasAppPortfolioItem(PortfolioItem):
 
     script = models.CharField(max_length=100)
-    script_type = models.CharField(max_length=10)
+    script_type = models.CharField(max_length=100)
 
     def __init__(self, *args, **kwargs):
         super(CanvasAppPortfolioItem, self).__init__(*args, **kwargs)

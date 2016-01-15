@@ -1,9 +1,8 @@
-{% extends "iframe.html" %}
-{% load staticfiles %}
+{% extends 'index.html' %}
 
 {% block extrahead %}
-	
 	<script type="text/coffeescript">
+
 
 		window.FRACTAL_DIMENSION = {{ params.0 }}
 		window.TRAPEZOIDAL_SECTIONS = {{ params.1 }}
@@ -11,8 +10,14 @@
 		window.DEGREE1_COEFF = {{ params.2 }}
 		window.DEGREE2_COEFF = {{ params.3 }}
 
+
+
 	</script>
 
-	<script type="text/coffeescript" src="{% static 'site/coffeescript/class.FractalTree.coffee' %}"></script>
-	
+	<script type="text/{{ item.script }}" src="/static/site/{{ item.script_type }}/{{ item.script }}"></script>
+{% endblock %}
+
+
+{% block pagecontent %}
+
 {% endblock %}

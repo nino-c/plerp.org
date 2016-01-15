@@ -10,6 +10,8 @@ import fractal_tree.urls
 #import canvasapp.urls
 import portfolio.urls
 
+import portfolio.views as portfolio_views
+
 from . import views
 
 urlpatterns = [
