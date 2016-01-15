@@ -249,17 +249,17 @@ window.start = () ->
 
        gl.strokeStyle = 'rgb(100, 25, 100)'
 
-       originalTreeStick =
+       seed =
            start: [U_width/2, 0]
            direction: pi/2
            length: U_height
            start_alpha: 1
-           begin_thickness: 130
+           begin_thickness: 80
            end_thickness: 20
            generation: 0
            children: CHILDREN
 
-       @hank = new TreeStick originalTreeStick
+       @hank = new TreeStick seed
        #@frameInterval = setInterval (=> @hank.grow()), 1000
 
 

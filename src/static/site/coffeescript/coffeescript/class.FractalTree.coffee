@@ -22,6 +22,7 @@ moveTo = ([x,y]) -> gl.moveTo(x, y)
 lineTo = ([x,y]) -> gl.lineTo(x, y)
 
 # set defaults
+
 # FRACTAL_DIMENSION = 4
 # TRAPEZOIDAL_SECTIONS = 10
 # CHILDREN = [3, -7]
@@ -94,7 +95,6 @@ class TreeStick
 
 
             #### sucessor
-
             start_perp2 = [\
                 (@current_position[0] + (@current_thickness/2) * cos perp),\
                 (@current_position[1] + (@current_thickness/2) * sin perp)]

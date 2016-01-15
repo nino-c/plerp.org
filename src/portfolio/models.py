@@ -64,6 +64,7 @@ class CanvasAppPortfolioItem(PortfolioItem):
 
     script = models.CharField(max_length=100)
     script_type = models.CharField(max_length=100)
+    appname = models.CharField(max_length=100, null=True)
 
     def __init__(self, *args, **kwargs):
         super(CanvasAppPortfolioItem, self).__init__(*args, **kwargs)
