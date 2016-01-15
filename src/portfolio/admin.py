@@ -5,7 +5,7 @@ admin.site.site_title = "plerp.org"
 admin.site.site_header = "plerp.org"
 
 
-map(admin.site.register, [PortfolioCategory, PortfolioItem, ProprietaryPortfolioItem])
+map(admin.site.register, [PortfolioCategory, PortfolioItem, ProprietaryPortfolioItem, CanvasAppPortfolioItem])
 
 class ImagesInline(admin.StackedInline):
     model = ImageModel

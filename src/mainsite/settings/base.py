@@ -145,3 +145,10 @@ LOGIN_REDIRECT_URL = reverse_lazy("profiles:show_self")
 LOGIN_URL = reverse_lazy("accounts:login")
 
 THUMBNAIL_EXTENSION = 'png'     # Or any extn for your thumbnails
+
+
+DEPLOYMENT_CHOICES = (
+    ('canvasapp', 'HTML5 Canvas'), 
+    ('paper', 'Academic Papers'), 
+    ('sourcecode', 'Raw Source Code'),
+    ('description', 'Description and gallery of images'))

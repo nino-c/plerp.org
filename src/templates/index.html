@@ -50,7 +50,7 @@
         <h3 class="mute">Portfolio</h3>
         <div class="list-group">
           {% for cat in categories %}
-            <a href="#" class="list-group-item">{{ cat.name }}<span class="badge">{{ cat.id }}</span></a>
+            <a href="#" class="list-group-item">{{ cat.name }}<span class="badge">{{ cat.num_items }}</span></a>
           {% endfor %}
         </div>
       </div>
