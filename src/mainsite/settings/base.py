@@ -81,7 +81,7 @@ INSTALLED_APPS = (
 
     # from ninopq
     'fractal_tree',
-    'maze2d',
+    #'maze2d',
     'canvasapp',
     'portfolio',
     'deployments',

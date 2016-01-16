@@ -55,7 +55,7 @@ def list_category(request, id):
     if category.name == 'Proprietary':
         items = models.ProprietaryPortfolioItem.objects.filter(category__exact=id)
     else:
-        items = models.PortfolioItem.objects.filter(category__exact=id)
+        items = models.PortfolioItem.objects.filter(category__exact=id).order_by('-id')
     return render(request, "portfolio/list_category.html", {'category': category, 'categories': get_categories(), 'items': items})
 
 def show_item(request, id):
@@ -73,7 +73,9 @@ def show_item(request, id):
             #return redirect('portfolio:mainindex')
             raise Exception("Item could not be found")
         #item.script = "{% static '"+ item.script +"' %}"
-        return render(request, "portfolio/show_item.html", {'categories': get_categories, 'item': item})
+
+        if item.urlpath:
+            return render(request, "portfolio/show_item.html", {'categories': get_categories, 'item': item, 'iframe_src': item.urlpath})
 
     raise Exception("Neen needs to learn 404 response")
 

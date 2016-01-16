@@ -62,14 +62,19 @@ class ProprietaryPortfolioItem(PortfolioItem):
 
 class CanvasAppPortfolioItem(PortfolioItem):
 
-    script = models.CharField(max_length=100)
-    script_type = models.CharField(max_length=100)
-    appname = models.CharField(max_length=100, null=True)
+    # script = models.CharField(max_length=100)
+    # script_type = models.CharField(max_length=100)
+    # appname = models.CharField(max_length=100, null=True)
+    # deployment_name = models.CharField(max_length=100, null=True)
+
+    script_mime_type = models.CharField(max_length=20, null=True)
+    urlpath = models.CharField(max_length=100, null=True)
 
     def __init__(self, *args, **kwargs):
         super(CanvasAppPortfolioItem, self).__init__(*args, **kwargs)
 
     def __unicode__(self):
         return self.title
+
 
     

@@ -58,7 +58,7 @@
 
 
       
-      <div class="col-sm-9 col-md-10 main">
+      <div class="col-sm-9 col-md-10 main" id="maincontent">
   
         <!--toggle sidebar button-->
         <p class="visible-xs">
@@ -107,7 +107,7 @@
 {% endblock %}
 
 {% block bigcanvas %}
-  {% if iframe_app %}
-    <iframe id="big-canvas" scrolling="no" src="/{{ iframe_app }}/index"></iframe>
+  {% if iframe_src %}
+    <iframe id="big-canvas" scrolling="no" src="{{ iframe_src }}"></iframe>
   {% endif %}
 {% endblock bigcanvas %}

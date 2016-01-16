@@ -1,6 +1,8 @@
 {% extends 'index.html' %}
 
 {% block extrahead %}
+
+	{% if params %}
 	<script type="text/coffeescript">
 
 
@@ -13,8 +15,32 @@
 
 
 	</script>
+	{% endif %}
 
-	<script type="text/{{ item.script }}" src="/static/site/{{ item.script_type }}/{{ item.script }}"></script>
+
+	<script type="text/javascript">
+
+	
+	$(document).ready(function () {
+		$("#maincontent").remove();
+	    $("iframe").each(function () {
+	        //Using closures to capture each one
+	        var iframe = $(this);
+	        iframe.on("load", function () { //Make sure it is fully loaded
+	            iframe.trigger("click");
+	        });
+
+	        iframe.click(function () {
+	            iframe.focus();
+	        });
+	    });
+	});
+
+	</script>
+	
+
+	<!-- <script type="{{ item.script_mime_type }}" src="{{ item.urlpath }}"></script> -->
+	
 {% endblock %}
 
 

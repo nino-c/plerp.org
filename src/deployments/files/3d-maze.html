@@ -2,11 +2,10 @@
 
 <head>
 
-    <title>Neen&apos;s Magic Maze</title>
-    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    
 
-    <script type="text/javascript" src="/static/js/jQuery2.1.1.js"></script>
-    <script type="text/javascript" src="/static/js/three.js"></script>
+    <script type="text/javascript" src="/static/site/js/jQuery2.1.1.js"></script>
+    <script type="text/javascript" src="/static/site/js/three.js"></script>
     <script type="text/javascript">
 
         /*
@@ -344,7 +343,7 @@
 
             // draw grass
             geometry = new THREE.BoxGeometry(this.x*this.cellSize, 10, this.y*this.cellSize);
-            texture = THREE.ImageUtils.loadTexture('/static/img/grass.jpg');
+            texture = THREE.ImageUtils.loadTexture('/static/site/img/textures/grass.jpg');
             texture.anisotropy = renderer.getMaxAnisotropy();
             material = new THREE.MeshBasicMaterial( { map: texture } );
             this.grass = new THREE.Mesh( geometry, material );
@@ -358,7 +357,7 @@
             } else skyRadius = (this.x*this.cellSize); 
             
             geometry = new THREE.SphereGeometry(skyRadius, 16, 16, Math.PI/2,  Math.PI*2, 0, Math.PI);
-            texture = THREE.ImageUtils.loadTexture('/static/img/sky.jpg');
+            texture = THREE.ImageUtils.loadTexture('/static/site/img/textures/sky.jpg');
             texture.anisotropy = renderer.getMaxAnisotropy();
             material = new THREE.MeshBasicMaterial( {map: texture} );
             material.side = THREE.BackSide
@@ -380,7 +379,7 @@
                         lt = [cx+this.cellSize, cy];
                         if (!this.wallIsRendered(mt, lt)) {
                             geometry = new THREE.BoxGeometry(  200, 200, 10  );
-                            texture = THREE.ImageUtils.loadTexture('/static/img/wood.jpg');
+                            texture = THREE.ImageUtils.loadTexture('/static/site/img/textures/wood.jpg');
                             texture.anisotropy = renderer.getMaxAnisotropy();
                             material = new THREE.MeshBasicMaterial( { map: texture } );
                             mesh = new THREE.Mesh( geometry, material );
@@ -393,7 +392,7 @@
                         lt = [cx+this.cellSize, cy+this.cellSize];
                         if (!this.wallIsRendered(mt, lt)) {
                             geometry = new THREE.BoxGeometry(  10, 200, 200  );
-                            texture = THREE.ImageUtils.loadTexture('/static/img/wood.jpg');
+                            texture = THREE.ImageUtils.loadTexture('/static/site/img/textures/wood.jpg');
                             texture.anisotropy = renderer.getMaxAnisotropy();
                             material = new THREE.MeshBasicMaterial( { map: texture } );
                             mesh = new THREE.Mesh( geometry, material );
@@ -406,7 +405,7 @@
                         lt = [cx, cy+this.cellSize];
                         if (!this.wallIsRendered(mt, lt)) {
                             geometry = new THREE.BoxGeometry(  200, 200, 10  );
-                            texture = THREE.ImageUtils.loadTexture('/static/img/crate.gif');
+                            texture = THREE.ImageUtils.loadTexture('/static/site/img/textures/crate.gif');
                             texture.anisotropy = renderer.getMaxAnisotropy();
                             material = new THREE.MeshBasicMaterial( { map: texture } );
                             mesh = new THREE.Mesh( geometry, material );
@@ -419,7 +418,7 @@
                         lt = [cx, cy];
                         if (!this.wallIsRendered(mt, lt)) {
                             geometry = new THREE.BoxGeometry(  10, 200, 200  );
-                            texture = THREE.ImageUtils.loadTexture('/static/img/crate.gif');
+                            texture = THREE.ImageUtils.loadTexture('/static/site/img/textures/crate.gif');
                             texture.anisotropy = renderer.getMaxAnisotropy();
                             material = new THREE.MeshBasicMaterial( { map: texture } );
                             mesh = new THREE.Mesh( geometry, material );
