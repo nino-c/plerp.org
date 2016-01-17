@@ -79,6 +79,8 @@ INSTALLED_APPS = (
     'profiles',
     'accounts',
 
+    'static_precompiler',
+
     # from ninopq
     'fractal_tree',
     #'maze2d',

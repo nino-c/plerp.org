@@ -343,3 +343,7 @@ footer {
 .main .page-header {
   margin-top: 0;
 }
+
+.img-circle-border {
+  border: 1px solid #dddddd;
+}

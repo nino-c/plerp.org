@@ -3,6 +3,6 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^(?P<requestfile>[a-zA-Z0-9\-]+)$', views.index, name='getfile'),
+    url(r'^(?P<requestfile>[a-zA-Z0-9\-\_]+)$', views.index, name='getfile'),
 
 ]

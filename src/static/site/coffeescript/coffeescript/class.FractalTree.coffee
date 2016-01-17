@@ -215,8 +215,6 @@ class TreeStick
 
 
 
-
-
     grow: ->
 
         console.log 'grow'

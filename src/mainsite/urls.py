@@ -9,7 +9,6 @@ import deployments.urls
 import fractal_tree.urls
 #import canvasapp.urls
 import portfolio.urls
-import maze2d.urls
 
 import portfolio.views as portfolio_views
 

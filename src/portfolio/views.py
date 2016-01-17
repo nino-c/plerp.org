@@ -33,7 +33,7 @@ def get_categories():
 
 def mainindex(request):
     categories = models.PortfolioCategory.objects.all()
-    return render(request, "index.html", {'categories': categories, 'iframe_app': 'fractal_tree'})
+    return render(request, "index.html", {'categories': categories, 'iframe_src': '/deployments/homesplash'})
 
 def iframe(request, appname):
     template_name = "iframe.html"
