@@ -66,6 +66,7 @@ _.each(_.range(-10,10), function(n) {
 });
 
 INITCOLOR = _.map(_.range(3), Math.random)
+primes = [1,2,3,5,7,11,13,17,19,23]
 
 graphs = [];
 N = 10;
@@ -80,14 +81,15 @@ _.map(_.range(N), function(n) {
     domain = numeric.linspace(-10, 10, 100)
     image = _.map(domain, function(x) {
         // the actual mathematical function
-        func = function(x) {
-            f = (
-                    (Math.cos(x)/x) + (1/100)*(Math.cos(10*x)*x)
-                )
-                * [1-(n/N)];
-            return f;
-        }
-        return func(x)
+        return _.reduce(
+            _.map(primes,
+                function(p) {
+                    return (1/p) * Math.cos(p*x) * x
+                }
+            ), function(j,k) { 
+                return j+k; 
+            }) * [1-(n/N)]
+
     });
 
     _.each(_.zip(domain,image), function(x) { 
@@ -108,11 +110,11 @@ function onResize(event) {
 }
 
 function onFrame(event) {
-    amplitude = (1/50)
-    rate = 8
+    amplitude = (1/7)
+    rate = 1.5
     scale = ((Math.sin(rate*event.time)*amplitude))+1
     _.each(graphs, function(g) {
-        g.scale(1, ((Math.sin(rate*event.time)/100))+1 );
+        g.scale(1, scale);
     });
 }
 
