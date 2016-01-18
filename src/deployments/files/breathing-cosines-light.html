@@ -74,7 +74,6 @@ _.map(_.range(N), function(n) {
 
     thickness = (n == 0 ? 3 : 1)
     alpha = 0.5 - (n/(N*2))
-    print(alpha)
     graph = new Path({
         strokeColor: new Color(  INITCOLOR.concat([alpha]) ),
         strokeWidth: thickness

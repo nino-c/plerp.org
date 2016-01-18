@@ -33,7 +33,7 @@ def get_categories():
 
 def mainindex(request):
     categories = models.PortfolioCategory.objects.all()
-    return render(request, "index.html", {'categories': categories, 'iframe_src': '/deployments/homesplash'})
+    return render(request, "index_topbar.html", {'categories': categories, 'iframe_src': '/deployments/breathing-cosines-light'})
 
 def iframe(request, appname):
     template_name = "iframe.html"
